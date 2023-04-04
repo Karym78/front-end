@@ -1,0 +1,117 @@
+<main id="main" class="main">
+   <div class="pagetitle">
+      <h1>Gestion d'Utilisateurs</h1>
+      <nav>
+         <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a routerLink="/">Compte</a></li>
+            <li class="breadcrumb-item">Utilisateurs</li>
+         </ol>
+      </nav>
+   </div>
+   <section class="section">
+      <button type="button" id="add_admin" class="btn btn-success"><span class="glyphicon glyphicon-plus"></span>
+         Ajouter un nouvel utilisateur</button>
+      <button style="display:none;" type="button" id="cancel_admin" class="btn btn-warning"><span
+            class="glyphicon glyphicon-hand-right"></span> Cancel</button>
+      <br />
+      <br />
+      <div id="a_table" class="panel panel-default">
+         <div class=" panel-heading">
+            <table id="table" class="table table-bordered">
+               <thead>
+                  <tr>
+                     <th class="text-center">Nom</th>
+                     <th class="text-center">Prenom</th>
+                     <th class="text-center">Login</th>
+                     <th class="text-center">Password</th>
+                     <th class="text-center">Matricule</th>
+                     <th class="text-center">Agence</th>
+                     <th class="text-center">Action</th>
+
+                  </tr>
+               </thead>
+               <tbody>
+
+                  <tr>
+                     <td style="text-align:center;">
+                        karim
+                     </td>
+                     <td style="text-align:center;">
+                        mejri
+                     </td>
+                     <td style="text-align:center;">
+                        karim@gmailcom                    
+                      </td>
+                     <td style="text-align:center;">
+                        karim123
+                     </td>
+                     <td style="text-align:center;">
+                        caissier
+                     </td>
+                     <td style="text-align:center;">
+                     tunis
+                     </td>
+                     <td style="text-align:center;">
+                        <a href="" class="btn btn-warning"><span class="glyphicon glyphicon-edit"></span> mettre à
+                           jour</a> <a href="#" name="" data-toggle="modal" data-target="#delete_admin"
+                           class="btn btn-danger id"><span class="glyphicon glyphicon-trash"></span> Supprimer</a>
+                     </td>
+                  </tr>
+
+               </tbody>
+            </table>
+         </div>
+      </div>
+      <div class="modal fade" id="delete_admin" tabindex="-1" role="dialog" aria-labelledby="myModallabel">
+         <div class="modal-dialog" role="document">
+            <div class="modal-content ">
+               <div class="modal-body">
+                  <label class="text-danger">Voulez-vous vraiment supprimer cet enregistrement ?</label>
+
+                  <br />
+                  <a class="btn btn-danger delete_admin"><span class="glyphicon glyphicon-trash"></span>
+                     Oui</a> <button type="button" class="btn btn-warning" data-dismiss="modal" aria-label="No"><span
+                        class="glyphicon glyphicon-remove"></span> Non</button>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div id="a_form" style="display:none;" class="panel panel-default">
+         <div class=" panel-heading">
+            <div class="alert alert-success">Comptes/étudiants/Ajouter nouveau</div>
+            <div style="width:40%; margin-left:32%;">
+               <form method="POST" action="add_student_register.php">
+                  <div class="form-group">
+                     <label>Nom d'utilisateur</label>
+                     <input type="text" class="form-control" name="userName" />
+                  </div>
+                  <div class="form-group">
+                     <label>Prenom</label>
+                     <input type="text" class="form-control" name="firstName" />
+                  </div>
+                  <div class="form-group">
+                     <label>Nom</label>
+                     <input type="text" class="form-control" name="lastName" />
+                  </div>
+                  <div class="form-group">
+                     <label>Mot de passe</label>
+                     <input type="password" class="form-control" name="password" />
+                  </div>
+                  <div class="form-group">
+                     <label>Email</label>
+                     <input type="text" class="form-control" name="userEmail" />
+                  </div>
+                  <div class="form-group">
+                     <label>genre</label>
+                     <input type="text" class="form-control" name="gender" />
+                  </div>
+                  <div class="form-group">
+                     <button class="btn btn-primary form-control" name="save_admin"><span
+                           class="glyphicon glyphicon-save"></span> Enregistrer</button>
+                  </div>
+               </form>
+            </div>
+         </div>
+      </div>
+   </section>
+</main>

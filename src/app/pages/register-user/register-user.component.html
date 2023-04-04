@@ -1,0 +1,36 @@
+
+<form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+    <h1>Inscription</h1>
+    <div>
+      <label for="nom">Nom</label>
+      <input type="text" formControlName="nom" [class.is-invalid]="submitted && f.nom.errors" />
+      <div *ngIf="submitted && f.nom.errors" class="invalid-feedback">
+        <div *ngIf="f.nom.errors.required">Nom requis</div>
+      </div>
+    </div>
+    <div>
+      <label for="prenom">Prénom</label>
+      <input type="text" formControlName="prenom" [class.is-invalid]="submitted && f.prenom.errors" />
+      <div *ngIf="submitted && f.prenom.errors" class="invalid-feedback">
+        <div *ngIf="f.prenom.errors.required">Prénom requis</div>
+      </div>
+    </div>
+    <div>
+      <label for="email">Email</label>
+      <input type="email" formControlName="email" [class.is-invalid]="submitted && f.email.errors" />
+      <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+        <div *ngIf="f.email.errors.required">Email requis</div>
+        <div *ngIf="f.email.errors.email">Email invalide</div>
+      </div>
+    </div>
+    <div>
+      <label for="password">Mot de passe</label>
+      <input type="password" formControlName="password" [class.is-invalid]="submitted && f.password.errors" />
+      <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+        <div *ngIf="f.password.errors.required">Mot de passe requis</div>
+        <div *ngIf="f.password.errors.minlength">Doit contenir au moins 8 caractères</div>
+      </div>
+    </div>
+    <button type="submit">S'inscrire</button>
+  </form>
+  
